@@ -23,6 +23,7 @@ class CarnetType extends AbstractType
         $builder
             ->add('title')
             ->add('address')  
+            ->add('username',HiddenType::class)
         ;    
     }
 

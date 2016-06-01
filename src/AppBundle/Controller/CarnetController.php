@@ -46,12 +46,17 @@ class CarnetController extends Controller
      */
     public function newAction(Request $request)
     {   
+        $user = $this->container->get('security.context')->getToken()->getUser();
+        $username=$user->getUsername();
+        
         $carnet= new Carnet;       
        
         $form = $this->createForm( 'AppBundle\Form\CarnetType', $carnet);
-               
+        $form->get('username')->setData($username); 
+        
         $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
+        
+        if ($form->isSubmitted() && $form->isValid()) {          
             $em = $this->getDoctrine()->getManager();
             $em->persist($carnet);
             $em->flush();
