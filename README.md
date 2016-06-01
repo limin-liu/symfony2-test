@@ -37,6 +37,7 @@ Update packages :
 Update schemas (FOSUserBundle) :
     
     php app/console doctrine:schema:create
+    php app/console doctrine:schema:update --force
 
 Create and activate user :
     
