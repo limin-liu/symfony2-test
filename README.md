@@ -34,12 +34,12 @@ Update packages :
     cd symfony2-test
     php composer.phar install
     
-Update schemas (FOSUserBundle) :
+Update schemas:
     
     php app/console doctrine:schema:create
     php app/console doctrine:schema:update --force
 
-Create and activate user :
+Create and activate user (FOSUserBundle):
     
     php app/console fos:user:create
     php app/console fos:user:activate
