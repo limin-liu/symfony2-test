@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}   
+<div class="container">  
+    <h2 class="page-header"> User Information </h2> 
+    <table class="table table-striped"> 
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>PhoneNo.</th>
+                <th>Website</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <th scope="row">{{user.username}}</th> 
+                <td>{{user.email}}</td> 
+                <td>{{ user.address }}</td>
+                <td>{{ user.phone }}</td>
+                <td>{{ user.website }}</td>
+                <td>                                          
+                    <a href="{{ path('information_edit', { 'id': user.id }) }}" class='btn btn-warning'>edit</a>                       
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+   
+{% endblock %}

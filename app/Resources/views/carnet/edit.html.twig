@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Edit Address</h1>
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <p><input type="submit" value="Edit" class='btn btn-warning'/></p>
+    {{ form_end(edit_form) }}
+
+    
+    <p><ul>
+        <li>
+            <a href="{{ path('carnet_index') }}">Back to the list</a>
+        </li>    
+    </ul></p>
+{% endblock %}

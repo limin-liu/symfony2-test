@@ -1,0 +1,4 @@
+services:
+#    cc_user.example:
+#        class: CC\UserBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

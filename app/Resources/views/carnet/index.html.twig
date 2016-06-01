@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <div class="container">  
+    <h2 class="page-header">Carnet D'adresses</h2> 
+    <table class="table table-striped">   
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Address</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for carnet in carnets %}
+            <tr>
+                <td><a href="{{ path('carnet_show', { 'id': carnet.id }) }}">{{ carnet.id }}</a></td>
+                <td>{{ carnet.title }}</td>
+                <td>{{ carnet.address }}</td>
+                <td>                                       
+                    <a href="{{ path('carnet_show', { 'id': carnet.id }) }}" class="btn btn-info">detail</a>                                            
+                    <a href="{{ path('carnet_edit', { 'id': carnet.id }) }}" class="btn btn-warning">edit</a>
+                    <a href="{{ path('carnet_delete', { 'id': carnet.id }) }}" class="btn btn-danger">delete</a>                    
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+    <ul>
+        <p><li>
+            <a href="{{ path('carnet_new') }}" class="btn btn-success">Add a new address</a>
+        </li></p>
+        <p><li>
+            <a href="{{ path('fos_user_registration_register') }}" class="btn btn-success">Register a new user</a>
+        </li></p>
+    </ul>
+{% endblock %}
