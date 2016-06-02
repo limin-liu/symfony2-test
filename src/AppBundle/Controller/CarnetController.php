@@ -80,7 +80,11 @@ class CarnetController extends Controller
     public function showAction(Carnet $carnet)
     {
         $deleteForm = $this->createDeleteForm($carnet);
-        $user= $this->getUser();
+        
+        $username=$carnet->getUsername();
+	
+	    $em = $this->getDoctrine()->getManager();
+        $user = $em->getRepository('CCUserBundle:User')->findOneByUsername($username);	
 
         return $this->render('carnet/show.html.twig', array(
             'carnet' => $carnet,
