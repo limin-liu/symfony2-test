@@ -44,7 +44,9 @@ Create and activate user (FOSUserBundle):
     php app/console fos:user:create
     php app/console fos:user:activate
     
+Configuration to the database
 
+    cd symfony2-test/app/config/parameters.yml
 
     
 
