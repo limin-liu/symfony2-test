@@ -46,7 +46,7 @@ Create and activate user (FOSUserBundle):
     
 Configuration to the database
 
-    cd symfony2-test/app/config/parameters.yml
+    Define the configuration options in the symfony2-test/app/config/parameters.yml file
 
     
 
